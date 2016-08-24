@@ -1,0 +1,25 @@
+{
+  "name": "salon",
+  "description": "Sitio web para salon cervecero",
+  "main": "gulpfile.js",
+  "authors": [
+    "mauricio@nwm.mx"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "salon",
+    "cervecero",
+    "flaco",
+    "campeon",
+    "bella"
+  ],
+  "homepage": "saloncervecero.mx",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
