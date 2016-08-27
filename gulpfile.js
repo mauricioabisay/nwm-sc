@@ -35,10 +35,27 @@
     .pipe(gulp.dest('./dest/img'));
   });
 
+  gulp.task('js', function() {
+    gulp.src([
+      'bower_components/jquery/dist/jquery.min.js',
+      'bower_components/parallax.js/parallax.min.js',
+      'bower_components/slick-carousel/slick/slick.min.js',
+      './src/scripts/**/*'
+    ])
+    .pipe($.sourcemaps.init())
+    .pipe($.concat('script.js'))
+    .pipe($.uglify())
+    .pipe($.sourcemaps.write())
+    .pipe(gulp.dest('./dest'))
+    .pipe(bs.stream());
+  });
+
   gulp.task('sass', function() {
     gulp.src('./src/styles/**/*')
     .pipe($.sourcemaps.init())
     .pipe($.sass())
+    .pipe($.autoprefixer({browsers: ['last 2 versions']}))
+    .pipe($.cleanCss())
     .pipe($.sourcemaps.write())
     .pipe(gulp.dest('./dest'))
     .pipe(bs.stream());
